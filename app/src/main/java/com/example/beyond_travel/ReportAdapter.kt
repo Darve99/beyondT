@@ -1,31 +1,43 @@
 package com.example.beyond_travel
 
-import  android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
 
-class ReportAdapter(private val reportList: List<ReportItema>) : RecyclerView.Adapter<ReportAdapter.ReportViewHolder>() {
+class ReportAdapter : RecyclerView.Adapter<ReportAdapter.ReportViewHolder>() {
+
+    private var reportsList: List<Report> = ArrayList()
+
+    inner class ReportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
+        val locationTextView: TextView = itemView.findViewById(R.id.locationTextView)
+        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReportViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.report_item_layout, parent, false)
-        return ReportViewHolder(view)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_report, parent, false)
+        return ReportViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ReportViewHolder, position: Int) {
-        val currentItem = reportList[position]
-        Glide.with(holder.itemView.context).load(currentItem.photoUri).into(holder.imageView)
-        holder.descriptionTextView.text = currentItem.description
+        val currentReport = reportsList[position]
+        holder.descriptionTextView.text = currentReport.description
+        holder.locationTextView.text = "Lat: ${currentReport.latitude}, Long: ${currentReport.longitude}"
+
+        // Cargar la imagen utilizando Picasso
+        Picasso.get().load(currentReport.imageUrl).into(holder.imageView)
     }
 
-    override fun getItemCount() = reportList.size
+    override fun getItemCount(): Int {
+        return reportsList.size
+    }
 
-    class ReportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.reportImageView)
-        val descriptionTextView: TextView = itemView.findViewById(R.id.reportDescriptionTextView)
+    fun setData(reports: List<Report>) {
+        this.reportsList = reports
+        notifyDataSetChanged()
     }
 }

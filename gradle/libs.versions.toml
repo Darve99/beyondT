@@ -15,6 +15,9 @@ firebaseAuthKtx = "22.3.1"
 firebaseBom = "32.3.1"
 firebaseAnalytics = "21.1.1"
 firebaseCore = "21.1.1"
+playServicesLocation = "21.2.0"
+firebaseFirestoreKtx = "24.11.1"
+firebaseStorageKtx = "20.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +36,10 @@ firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx",
 firebase-bom = { group = "com.google.firebase:firebase-bom",  name="firebase-bom",version = "32.7.4" }
 firebase-analytics = { group = "com.google.firebase:firebase-analytics", name="firebase-analytics", version.ref = "firebaseAnalytics" }
 firebase-core = { group = "com.google.firebase:firebase-core",   name="firebase-core",version.ref = "firebaseCore" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
+picasso = { group = "com.squareup.picasso", name = "picasso", version = "2.71828" }
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

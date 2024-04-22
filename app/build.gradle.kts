@@ -42,6 +42,7 @@ android {
 
 dependencies {
 
+    implementation(libs.picasso)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -53,6 +54,9 @@ dependencies {
     implementation(libs.okhttp)
     implementation (libs.bumtech)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.play.services.location)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.storage.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

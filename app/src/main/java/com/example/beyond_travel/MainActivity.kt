@@ -8,26 +8,27 @@ import androidx.appcompat.widget.AppCompatImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: PhotoAdapter
+    private lateinit var adapter: ReportAdapter
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         FirebaseApp.initializeApp(this)
+        firestore = FirebaseFirestore.getInstance()
 
-        // Inicializar RecyclerView y adaptador
         recyclerView = findViewById(R.id.recyclerView)
-        adapter = PhotoAdapter()
+        adapter = ReportAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-
-        // Obtener la lista de fotos y pasarla al adaptador
-        val photosList = getPhotosList()
-        adapter.setData(photosList)
 
         // Configurar los listeners de clic para los botones de la botonera
         findViewById<AppCompatImageButton>(R.id.buttonActivity3).setOnClickListener {
@@ -45,16 +46,37 @@ class MainActivity : AppCompatActivity() {
         findViewById<AppCompatImageButton>(R.id.buttonActivity5).setOnClickListener {
             startActivity(Intent(this, Info_Activity::class.java))
         }
+
+        // Obtener y mostrar los reportes
+        fetchReports()
     }
 
-    // Método de ejemplo para obtener la lista de fotos desde Firestore u otra fuente de datos
-    private fun getPhotosList(): List<Photo> {
-        // Aquí deberías realizar la lógica para obtener la lista de fotos desde tu fuente de datos
-        // y devolverla como una lista de objetos Photo
-        // Por ejemplo:
-        val photo1 = Photo("url_foto_1", "Descripción de la foto 1")
-        val photo2 = Photo("url_foto_2", "Descripción de la foto 2")
-        // Agregar más fotos si es necesario
-        return listOf(photo1, photo2)
+    private fun fetchReports() {
+        GlobalScope.launch(Dispatchers.IO) {
+            val reportsList = mutableListOf<Report>()
+
+            // Obtener los documentos de la colección "reports" de Firestore
+            firestore.collection("reports")
+                .get()
+                .addOnSuccessListener { result ->
+                    for (document in result) {
+                        val data = document.data
+                        val description = data["description"] as String
+                        val latitude = data["latitude"] as Double
+                        val longitude = data["longitude"] as Double
+                        val imageUrl = data["imageUrl"] as String
+
+                        val report = Report(description, latitude, longitude, imageUrl)
+                        reportsList.add(report)
+                    }
+                    // Pasar la lista de reportes al adaptador para mostrarlos en el RecyclerView
+                    runOnUiThread {
+                        adapter.setData(reportsList)
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    println("Error getting documents: $exception")
+                }
+        }
     }
 }
