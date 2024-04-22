@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "179674860756",
+    "project_id": "beyond-travel-aacd7",
+    "storage_bucket": "beyond-travel-aacd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179674860756:android:6b28b7c41244465bc33f41",
+        "android_client_info": {
+          "package_name": "com.example.beyond_travel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8Q-6iStxLNNPcKitnbK6q1t61op4y37A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

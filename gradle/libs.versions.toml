@@ -1,0 +1,40 @@
+[versions]
+agp = "8.3.1"
+kotlin = "1.9.0"
+coreKtx = "1.10.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
+navigationFragmentKtx = "2.6.0"
+navigationUiKtx = "2.6.0"
+firebaseAuthKtx = "22.3.1"
+firebaseBom = "32.3.1"
+firebaseAnalytics = "21.1.1"
+firebaseCore = "21.1.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version = "4.9.2" }
+bumtech = { group = "com.github.bumptech.glide", name = "glide", version = "4.12.0" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+firebase-bom = { group = "com.google.firebase:firebase-bom",  name="firebase-bom",version = "32.7.4" }
+firebase-analytics = { group = "com.google.firebase:firebase-analytics", name="firebase-analytics", version.ref = "firebaseAnalytics" }
+firebase-core = { group = "com.google.firebase:firebase-core",   name="firebase-core",version.ref = "firebaseCore" }
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+googleServices = { id = "com.google.gms.google-services", version = "4.4.1" }
+

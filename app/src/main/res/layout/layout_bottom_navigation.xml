@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimary"
+    android:padding="8dp"
+    android:gravity="center">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonActivity1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/home"
+        android:background="@android:color/transparent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonActivity2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/temp"
+        android:background="@android:color/transparent"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonActivity3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/binoculares"
+        android:background="@android:color/transparent" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonActivity4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/pregunta"
+        android:background="@android:color/transparent"/>
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonActivity5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/info"
+        android:background="@android:color/transparent" />
+</LinearLayout>
