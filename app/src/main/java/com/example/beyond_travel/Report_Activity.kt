@@ -61,8 +61,21 @@ class Report_Activity : AppCompatActivity() {
                 requestCameraPermission()
             }
         }
-        homeButton.setOnClickListener {
+        // Configurar los listeners de clic para los botones de la botonera
+        findViewById<AppCompatImageButton>(R.id.buttonActivity1).setOnClickListener {
             startActivity(Intent(this,  MainActivity::class.java))
+        }
+
+        findViewById<AppCompatImageButton>(R.id.buttonActivity2).setOnClickListener {
+            startActivity(Intent(this, Weather_Activity::class.java))
+        }
+
+        findViewById<AppCompatImageButton>(R.id.buttonActivity4).setOnClickListener {
+            startActivity(Intent(this, PQR_Activity::class.java))
+        }
+
+        findViewById<AppCompatImageButton>(R.id.buttonActivity5).setOnClickListener {
+            startActivity(Intent(this, Info_Activity::class.java))
         }
         saveButton.setOnClickListener {
             saveReport()

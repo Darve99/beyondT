@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<AppCompatImageButton>(R.id.buttonActivity4).setOnClickListener {
-            startActivity(Intent(this, Login_Activity::class.java))
+            startActivity(Intent(this, PQR_Activity::class.java))
         }
 
         findViewById<AppCompatImageButton>(R.id.buttonActivity5).setOnClickListener {

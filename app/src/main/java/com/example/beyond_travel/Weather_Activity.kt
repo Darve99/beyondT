@@ -42,8 +42,8 @@ class Weather_Activity : AppCompatActivity() {
             startActivity(Intent(this, Report_Activity::class.java))
         }
 
-        findViewById<AppCompatImageButton>(R.id.buttonActivity2).setOnClickListener {
-            startActivity(Intent(this, Weather_Activity::class.java))
+        findViewById<AppCompatImageButton>(R.id.buttonActivity5).setOnClickListener {
+            startActivity(Intent(this, Info_Activity::class.java))
         }
 
         findViewById<AppCompatImageButton>(R.id.buttonActivity4).setOnClickListener {

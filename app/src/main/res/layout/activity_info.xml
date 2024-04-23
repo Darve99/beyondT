@@ -1,19 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<!-- activity_info.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Info_Activity">
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/termsTextView"
+        android:layout_marginBottom="11dp"
+        android:text="Aquí puedes mostrar la información que desees."
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/contactTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacto: example@example.com"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/termsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/aboutTextView"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="46dp"
+        android:text="Términos y Condiciones: Lorem ipsum dolor sit amet"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/aboutTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/include2"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="377dp"
+        android:text="¿Qué es la aplicación?: Breve descripción de la aplicación."
+        android:textSize="18sp" />
 
     <include
+        android:id="@+id/include2"
         layout="@layout/layout_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="683dp" />
+        android:layout_alignParentBottom="true" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
