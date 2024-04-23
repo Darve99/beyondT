@@ -17,6 +17,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -32,8 +33,7 @@ class Report_Activity : AppCompatActivity() {
     private lateinit var descriptionEditText: EditText
     private lateinit var takePhotoButton: Button
     private lateinit var saveButton: Button
-    private lateinit var homeButton: Button
-
+    private lateinit var homeButton: AppCompatImageButton
     private val CAMERA_PERMISSION_CODE = 101
     private val IMAGE_CAPTURE_CODE = 102
     private var imageUri: Uri? = null
@@ -61,7 +61,9 @@ class Report_Activity : AppCompatActivity() {
                 requestCameraPermission()
             }
         }
-
+        homeButton.setOnClickListener {
+            startActivity(Intent(this,  MainActivity::class.java))
+        }
         saveButton.setOnClickListener {
             saveReport()
         }
