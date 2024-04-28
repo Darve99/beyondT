@@ -9,62 +9,63 @@
     android:background="@android:color/white"
     tools:context=".PQR_Activity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="205dp"
+        android:layout_height="204dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="100dp"
+        app:srcCompat="@drawable/faq" />
+
     <EditText
         android:id="@+id/pqrEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/imageView4"
+        android:layout_margin="16dp"
         android:gravity="start|top"
         android:hint="Escribe tu petición, queja o reclamo aquí"
         android:inputType="textMultiLine"
         android:minLines="5"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="265dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="445dp"
-        app:layout_constraintTop_toBottomOf="@+id/pqrEditText"
-        tools:layout_editor_absoluteX="149dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_below="@+id/pqrEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pqrEditText" />
 
     <Button
         android:id="@+id/submitBtn"
-        android:layout_width="111dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="167dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="386dp"
+        android:layout_margin="16dp"
         android:text="Enviar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_below="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pqrEditText"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <include
         layout="@layout/layout_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="683dp" />
+        android:layout_alignParentBottom="true" />
+
+
 
 </RelativeLayout>
