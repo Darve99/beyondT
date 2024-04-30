@@ -35,6 +35,7 @@ class Report_Activity : AppCompatActivity() {
     private lateinit var saveButton: Button
     private lateinit var homeButton: AppCompatImageButton
     private val CAMERA_PERMISSION_CODE = 101
+
     private val IMAGE_CAPTURE_CODE = 102
     private var imageUri: Uri? = null
 
@@ -44,7 +45,10 @@ class Report_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_report)
-
+        val fillFormButton = findViewById<Button>(R.id.fillFormButton)
+        fillFormButton.setOnClickListener {
+            openForm()
+        }
         imageView = findViewById(R.id.imageView)
         descriptionEditText = findViewById(R.id.descriptionEditText)
         takePhotoButton = findViewById(R.id.takePhotoButton)
@@ -80,6 +84,13 @@ class Report_Activity : AppCompatActivity() {
         saveButton.setOnClickListener {
             saveReport()
         }
+    }
+
+    private fun openForm() {
+        val url = "https://ceajaveriana.co1.qualtrics.com/jfe/preview/previewId/0c3ee5f8-8f16-470a-b70c-33023d8215d0/SV_e8Nhkfmh6HD8VzU?Q_CHL=preview"
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 
     private fun checkCameraPermission(): Boolean {

@@ -39,6 +39,18 @@
         android:layout_toStartOf="@id/takePhotoButton"
         android:text="Save"
         android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/fillFormButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/saveButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="openForm"
+        android:text="Please complete the form" />
+
     <include
         layout="@layout/layout_bottom_navigation"
         android:layout_width="match_parent"
